@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PerlCon Footer</title>
+	<link rel="stylesheet" href="style/layout.css">
+	<script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+	<link rel="import" href="../bower_components/polymer/polymer.html">
+	<link rel="import" href="elements/perlcon-sponsors/perlcon-sponsors.html">
+
+	<style>
+		body {
+			width: 1920px;
+			height: 260px;
+			font-family: sans-serif;
+		}
+		#bar {
+			background-color: #B01313;
+			height: 5px;
+			width: 1820px;
+			margin: 0 50px;
+		}
+		#logo {
+			height: 100%;
+		}
+		#conf_name {
+			display: inline-block;
+			background-color: #B01313;
+			color: white;
+			padding: 2px;
+			font-size: 60px;
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+		.third {
+			display: inline-flex;
+			justify-content: center;
+			width: 33%;
+			height: 255px;
+		}
+	</style>
+</head>
+<body>
+<div id="bar"></div>
+<div class="third">
+	<img id="logo" src="elements/images/perlcon-riga-round.png" alt="PerlCon Riga Round">
+	<div id="conf_name">PerlCon 2019</div>
+</div>
+<div class="third">
+	<perlcon-sponsors replicant="perlcon-corporate-sponsors"></perlcon-sponsors>
+</div>
+<div class="third">
+	<perlcon-sponsors replicant="perlcon-community-sponsors"></perlcon-sponsors>
+</div>
+</body>
+</html>

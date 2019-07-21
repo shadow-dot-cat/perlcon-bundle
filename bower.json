@@ -1,0 +1,10 @@
+{
+	"name": "perlcon-bundle",
+	"description": "Bundle for PerlCon in Riga",
+	"dependencies": {
+		"iron-image": "^2.2.1",
+		"gsap": "^2.0.1",
+		"webcomponentsjs": "^2.0.2",
+		"polymer": "^2.6.0"
+	}
+}

@@ -36,9 +36,39 @@
         "file": "index.html",
         "width": 1920,
         "height": 1080
+      },
+      {
+        "file": "footer.html",
+        "width": 1920,
+        "height": 260
+      }
+    ],
+    "assetCategories": [
+      {
+        "name": "perlcon-corporate-sponsors",
+        "title": "PerlCon Corporate Sponsors",
+        "allowedTypes": [
+          "png",
+          "jpeg",
+          "jpg",
+          "gif"
+        ]
+      },
+      {
+        "name": "perlcon-community-sponsors",
+        "title": "PerlCon Community Sponsors",
+        "allowedTypes": [
+          "png",
+          "jpeg",
+          "jpg",
+          "gif"
+        ]
       }
     ]
   },
-  "repository": "https://github.com/nodecg/nodecg.git",
-  "license": "MIT"
+  "repository": "https://github.com/shadow-dot-cat/perlcon-bundle.git",
+  "license": "MIT",
+  "dependencies": {
+    "bower-npm-resolver": "^0.10.0"
+  }
 }
