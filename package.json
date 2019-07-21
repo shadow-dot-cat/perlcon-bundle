@@ -1,0 +1,44 @@
+{
+  "name": "perlcon-bundle",
+  "version": "0.0.0",
+  "description": "Bundle for PerlCon in Riga",
+  "homepage": "https://github.com/shadow-dot-cat/perlcon-bundle",
+  "author": {
+    "name": "Tom Bloor",
+    "email": "tom@tbsliver.me",
+    "url": "https://tbsliver.me"
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "perlcon",
+    "nodecg",
+    "obs",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+    "compatibleRange": "^1.1.1",
+    "dashboardPanels": [
+      {
+        "name": "panel",
+        "title": "Panel",
+        "width": 2,
+        "file": "panel.html",
+        "headerColor": "#525F78"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "index.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  },
+  "repository": "https://github.com/nodecg/nodecg.git",
+  "license": "MIT"
+}
