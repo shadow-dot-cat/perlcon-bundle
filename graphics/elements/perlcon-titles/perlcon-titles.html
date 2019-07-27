@@ -1,0 +1,76 @@
+<dom-module id="perlcon-titles">
+	<template>
+		<style>
+			:host {
+				display: block;
+				width: 480px;
+				height: 225px;
+				box-sizing: border-box;
+			}
+
+			#titles {
+				display: flex;
+				flex-direction: column;
+				height: 100%;
+				width: 100%;
+			}
+
+			#titles > div {
+				flex-grow: 1;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-weight: bold;
+				font-size: xx-large;
+				padding: 0 10px;
+			}
+
+			#titles > div > p {
+				text-align: center;
+				/* Some stupid crap here... */
+				margin-block-start: 0;
+				margin-block-end: 0;
+			}
+
+			#title-speaker {
+				margin-top: 10px;
+				background: white;
+			}
+
+			#title-talk {
+				margin-bottom: 10px;
+				background: #B01313;
+				color: white;
+			}
+		</style>
+		<div id="titles">
+			<div id="title-speaker">
+				<p id="name"></p>
+			</div>
+			<div id="title-talk">
+				<p id="talk"></p>
+			</div>
+		</div>
+	</template>
+
+	<script>
+        class PerlconTitles extends Polymer.Element {
+            static get is() { return "perlcon-titles" }
+            static get properties() {
+                return {
+                    replicant: String
+                };
+            }
+            ready() {
+                super.ready();
+                let roomInfo = nodecg.Replicant(this.replicant);
+                roomInfo.on('change', newVal => {
+                    this.$.name.textContent = newVal.name;
+                    this.$.talk.textContent = newVal.talk;
+
+                });
+            }
+        }
+        customElements.define(PerlconTitles.is, PerlconTitles);
+	</script>
+</dom-module>

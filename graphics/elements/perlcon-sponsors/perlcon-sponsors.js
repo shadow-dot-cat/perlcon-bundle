@@ -5,13 +5,16 @@
 	const FADE_OUT_EASE = Power1.easeIn;
 	const FADE_IN_EASE = Power1.easeOut;
 	// TODO sort out config for this
-	const HOLD_DURATION = 3; // nodecg.bundleConfig.sponsorScrollSpeed;
 
 	class PerlConSponsors extends Polymer.Element {
 		static get is() { return "perlcon-sponsors" };
 		static get properties() {
 			return {
-				replicant: String
+				replicant: String,
+				hold_seconds: {
+					type: Number,
+					value: 30,
+				}
 			};
 		}
 
@@ -36,7 +39,7 @@
 			});
 
 			// Cycle through sponsor logos every this.duration seconds
-			setInterval(this.nextSponsor.bind(this), HOLD_DURATION * 1000);
+			setInterval(this.nextSponsor.bind(this), this.hold_seconds * 1000);
 		}
 
 		nextSponsor() {

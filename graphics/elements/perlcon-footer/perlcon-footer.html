@@ -1,0 +1,71 @@
+<link rel="import" href="../perlcon-sponsors/perlcon-sponsors.html">
+
+<dom-module id="perlcon-footer">
+	<template>
+		<style>
+			:host {
+				display: block;
+				width: 1920px;
+				height: 260px;
+				box-sizing: border-box;
+			}
+
+			#bar {
+				background-color: #B01313;
+				height: 5px;
+				width: 1820px;
+				margin: 0 50px;
+			}
+
+			#logo {
+				height: 100%;
+			}
+
+			.footer-images {
+				display: flex;
+				width: 1820px;
+				height: 255px;
+				margin: 0 50px;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.height-100 {
+				height: 100%;
+			}
+
+			.height-225 {
+				height: 225px;
+			}
+
+			.flex-grow {
+				flex-grow: 1;
+			}
+
+			.spacing-horizontal {
+				margin-left: 15px;
+				margin-right: 15px;
+			}
+		</style>
+		<div id="bar"></div>
+		<div class="footer-images">
+			<div class="height-100">
+				<img id="logo" src="elements/images/perlcon-riga.png" alt="PerlCon Riga Round">
+			</div>
+			<div class="height-225 flex-grow spacing-horizontal">
+				<perlcon-sponsors replicant="perlcon-major-sponsors" hold_seconds="60"></perlcon-sponsors>
+			</div>
+			<div class="height-225 flex-grow">
+				<perlcon-sponsors replicant="perlcon-minor-sponsors" hold_seconds="30"></perlcon-sponsors>
+			</div>
+		</div>
+	</template>
+
+	<script>
+        class PerlconFooter extends Polymer.Element {
+            static get is() { return "perlcon-footer" }
+            constructor() { super() }
+        }
+        customElements.define(PerlconFooter.is, PerlconFooter);
+	</script>
+</dom-module>

@@ -24,10 +24,34 @@
     "compatibleRange": "^1.1.1",
     "dashboardPanels": [
       {
-        "name": "panel",
-        "title": "Panel",
+        "name": "master",
+        "title": "Master",
         "width": 2,
-        "file": "panel.html",
+        "file": "master.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "room_1_speakers",
+        "title": "Room 1 Speakers",
+        "width": 4,
+        "workspace": "Room 1",
+        "file": "room_1_speakers.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "room_2_speakers",
+        "title": "Room 2 Speakers",
+        "width": 4,
+        "workspace": "Room 2",
+        "file": "room_2_speakers.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "room_3_speakers",
+        "title": "Room 3 Speakers",
+        "width": 4,
+        "workspace": "Room 3",
+        "file": "room_3_speakers.html",
         "headerColor": "#525F78"
       }
     ],
@@ -41,12 +65,47 @@
         "file": "footer.html",
         "width": 1920,
         "height": 260
+      },
+      {
+        "file": "room_banner.html",
+        "width": 1920,
+        "height": 820
+      },
+      {
+        "file": "room_1_sidebar.html",
+        "width": 1920,
+        "height": 820
+      },
+      {
+        "file": "room_1_speaker.html",
+        "width": 1920,
+        "height": 820
+      },
+      {
+        "file": "room_2_sidebar.html",
+        "width": 1920,
+        "height": 820
+      },
+      {
+        "file": "room_2_speaker.html",
+        "width": 1920,
+        "height": 820
+      },
+      {
+        "file": "room_3_sidebar.html",
+        "width": 1920,
+        "height": 820
+      },
+      {
+        "file": "room_3_speaker.html",
+        "width": 1920,
+        "height": 820
       }
     ],
     "assetCategories": [
       {
-        "name": "perlcon-corporate-sponsors",
-        "title": "PerlCon Corporate Sponsors",
+        "name": "perlcon-major-sponsors",
+        "title": "PerlCon Major Sponsors",
         "allowedTypes": [
           "png",
           "jpeg",
@@ -55,8 +114,8 @@
         ]
       },
       {
-        "name": "perlcon-community-sponsors",
-        "title": "PerlCon Community Sponsors",
+        "name": "perlcon-minor-sponsors",
+        "title": "PerlCon Minor Sponsors",
         "allowedTypes": [
           "png",
           "jpeg",

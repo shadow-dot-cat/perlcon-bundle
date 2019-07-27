@@ -1,0 +1,46 @@
+<dom-module id="perlcon-speaker">
+	<template>
+		<style>
+			:host {
+				display: block;
+				width: 1280px;
+				height: 720px;
+				box-sizing: border-box;
+			}
+
+			#main {
+				width: 1280px;
+				height: 720px;
+				background: #fafafa;
+				display: flex;
+				justify-content: center;
+			}
+
+			.img-fill {
+				height: 100%;
+			}
+		</style>
+		<div id="main">
+			<img id="speaker" class="img-fill" src="elements/images/perlcon-riga.png">
+		</div>
+	</template>
+
+	<script>
+        class PerlconSpeaker extends Polymer.Element {
+            static get is() { return "perlcon-speaker" }
+            static get properties() {
+                return {
+                    replicant: String
+                };
+            }
+            ready() {
+                super.ready();
+                let roomInfo = nodecg.Replicant(this.replicant);
+                roomInfo.on('change', newVal => {
+                    this.$.speaker.src = newVal.img;
+				});
+			}
+        }
+        customElements.define(PerlconSpeaker.is, PerlconSpeaker);
+	</script>
+</dom-module>

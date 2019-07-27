@@ -1,0 +1,32 @@
+<link rel="import" href="../perlcon-banner/perlcon-banner.html">
+<dom-module id="perlcon-top-banner">
+	<template>
+		<style>
+			:host {
+				display: block;
+				width: 1920px;
+				height: 820px;
+				padding: 50px;
+				box-sizing: border-box;
+			}
+
+			#top {
+				height: 100%;
+				width: 100%;
+				display: flex;
+				justify-content: center;
+			}
+		</style>
+		<div id="top">
+			<perlcon-banner></perlcon-banner>
+		</div>
+	</template>
+
+	<script>
+        class PerlconTopBanner extends Polymer.Element {
+            static get is() { return "perlcon-top-banner" }
+            constructor() { super() }
+        }
+        customElements.define(PerlconTopBanner.is, PerlconTopBanner);
+	</script>
+</dom-module>

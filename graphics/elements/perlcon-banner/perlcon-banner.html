@@ -1,0 +1,35 @@
+<dom-module id="perlcon-banner">
+	<template>
+		<style>
+			:host {
+				display: block;
+				width: 1280px;
+				height: 720px;
+				box-sizing: border-box;
+			}
+
+			#main {
+				width: 1280px;
+				height: 720px;
+				background: #fafafa;
+				display: flex;
+				justify-content: center;
+			}
+
+			.img-fill {
+				height: 100%;
+			}
+		</style>
+		<div id="main">
+			<img class="img-fill" src="elements/images/perlcon-riga.png">
+		</div>
+	</template>
+
+	<script>
+        class PerlconBanner extends Polymer.Element {
+            static get is() { return "perlcon-banner" }
+            constructor() { super() }
+        }
+        customElements.define(PerlconBanner.is, PerlconBanner);
+	</script>
+</dom-module>

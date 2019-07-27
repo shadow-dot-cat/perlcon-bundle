@@ -5,6 +5,8 @@
 		"iron-image": "^2.2.1",
 		"gsap": "^2.0.1",
 		"webcomponentsjs": "^2.0.2",
-		"polymer": "^2.6.0"
+		"polymer": "^2.6.0",
+		"paper-item": "PolymerElements/paper-item#^2.1.1",
+		"paper-dialog": "PolymerElements/paper-dialog#^2.1.1"
 	}
 }

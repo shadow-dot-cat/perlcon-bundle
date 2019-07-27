@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<button id="sync">Sync Data</button>
+<button id="process">Process Data</button>
+<br/>
+<button id="set_day_1">Day 1</button>
+<button id="set_day_2">Day 2</button>
+<button id="set_day_3">Day 3</button>
+<script>
+    document.getElementById('sync').addEventListener('click', function () {
+        nodecg.sendMessage('syncSchedule', (err, data) => {
+            console.log('synched', err, data);
+        });
+    });
+
+    document.getElementById('process').addEventListener('click', function () {
+        nodecg.sendMessage('processSchedule', (err, data) => {
+            console.log('processed', err, data);
+        });
+    });
+
+    document.getElementById('set_day_1').addEventListener('click', function () {
+        nodecg.sendMessage('setDay', 'day_1', (err, data) => {
+            console.log('done', err, data);
+        });
+    });
+
+    document.getElementById('set_day_2').addEventListener('click', function () {
+        nodecg.sendMessage('setDay', 'day_2', (err, data) => {
+            console.log('done', err, data);
+        });
+    });
+
+    document.getElementById('set_day_3').addEventListener('click', function () {
+        nodecg.sendMessage('setDay', 'day_3', (err, data) => {
+            console.log('done', err, data);
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Talk</th>
+			<th>Duration</th>
+			<th>Use</th>
+		</tr>
+	</thead>
+	<tbody id="speakers"></tbody>
+</table>
+
+<script>
+
+	const room_name = 'room_2';
+
+    let talks = {};
+    let day = "day_1";
+
+    const room = nodecg.Replicant(room_name);
+    const control = nodecg.Replicant('master_control');
+
+    NodeCG.waitForReplicants(room, control).then(() => {
+        control.on('change', (newVal) => {
+            day = newVal.currentDay;
+            setTalkData();
+        });
+        room.on('change', (newVal) => {
+            talks = newVal;
+            setTalkData();
+        })
+    });
+
+    function setTalkData() {
+        console.log(day);
+        console.log(talks[day]);
+
+        if (talks[day] === undefined) return;
+
+        const table = document.getElementById('speakers');
+        table.innerHTML = '';
+
+        talks[day].forEach((e, i) => {
+			let markup = talkRow(e, i);
+			let row = document.createElement('tr');
+			row.innerHTML = markup;
+			table.appendChild(row);
+
+			document.getElementById(`use_${i}`).addEventListener('click', () => {
+			    nodecg.sendMessage('setRoom', {
+			        room: room_name,
+			        day: day,
+					index: i
+				}, (err, data) => {
+			        console.log('set');
+				});
+			})
+        });
+    }
+
+    function talkRow(data, idx) {
+        return `
+<td>${data.name}</td>
+<td>${data.title}</td>
+<td>${data.duration}</td>
+<td><button id="use_${idx}">+</button></td>
+`;
+    }
+</script>
+</body>
+</html>

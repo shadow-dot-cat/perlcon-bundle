@@ -1,0 +1,32 @@
+<link rel="import" href="../perlcon-main/perlcon-main.html">
+<dom-module id="perlcon-top">
+	<template>
+		<style>
+			:host {
+				display: block;
+				width: 1920px;
+				height: 820px;
+				padding: 50px;
+				box-sizing: border-box;
+			}
+
+			#top {
+				height: 100%;
+				width: 100%;
+				display: flex;
+				justify-content: center;
+			}
+		</style>
+		<div id="top">
+			<perlcon-main></perlcon-main>
+		</div>
+	</template>
+
+	<script>
+        class PerlconTop extends Polymer.Element {
+            static get is() { return "perlcon-top" }
+            constructor() { super() }
+        }
+        customElements.define(PerlconTop.is, PerlconTop);
+	</script>
+</dom-module>
